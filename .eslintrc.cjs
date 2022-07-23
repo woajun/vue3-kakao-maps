@@ -9,5 +9,6 @@ module.exports = {
     '@vue/airbnb',
     'eslint:recommended',
     '@vue/eslint-config-typescript/recommended',
+    'plugin:import/typescript',
   ],
 };

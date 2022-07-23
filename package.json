@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vue/eslint-config-airbnb": "^6.0.0",
+    "kakao.maps.d.ts": "^0.1.32",
     "vue": "^3.2.37"
   },
   "devDependencies": {
