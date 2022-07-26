@@ -24,10 +24,6 @@ interface LatLngBounds {
   ne: LatLng;
 }
 
-const container = ref<HTMLElement>();
-const map = ref<kakao.maps.Map | null>(null);
-provide('kMap', map);
-
 interface Props {
   /** 맵의 중앙을 center에 위치시킨다. */
   center: LatLng;
@@ -89,6 +85,10 @@ interface Emits {
 }
 
 const emit = defineEmits<Emits>();
+
+const container = ref<HTMLElement>();
+const map = ref<kakao.maps.Map | null>(null);
+provide('kakaoMap', map);
 
 function createMap() {
   if (!container.value) return;
