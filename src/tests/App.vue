@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import KMap from '../components/KMap.vue';
+import KakaoMap from '../components/KakaoMap.vue';
 
 const center = ref({ lat: 37.566826, lng: 126.9786567 });
 
@@ -26,7 +26,7 @@ const usePanTo = ref(true);
 <template>
   <div>tests</div>
   <div id="map">
-    <KMap
+    <KakaoMap
       :center="center"
       :level="level"
       :min-level="minLevel"

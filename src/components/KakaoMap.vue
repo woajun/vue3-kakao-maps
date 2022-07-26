@@ -28,14 +28,11 @@ const container = ref<HTMLElement>();
 const map = ref<kakao.maps.Map | null>(null);
 provide('kMap', map);
 
-type Level = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
- '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | number | string;
-
 interface Props {
   /** 맵의 중앙을 center에 위치시킨다. */
   center: LatLng;
   /** 지도의 확대 수준을 설정한다. 1~14 */
-  level?: Level;
+  level?: number | string;
   /**
    * 주어진 영역이 화면 안에 전부 나타날 수 있도록 지도의 중심 좌표와 확대 수준을 설정한다.
    */
@@ -44,11 +41,11 @@ interface Props {
   /** 지도의 최저 레벨 값을 1~14로 설정한다.
    * 기본적으로 레벨 값이 작을수록 지도는 확대되는데
    * 이 설정한 레벨까지만 확대할 수 있게 된다. */
-  minLevel?: Level;
+  minLevel?: number | string;
   /** 지도의 최고 레벨 값을 1~14로 설정한다.
    * 기본적으로 레벨 값이 클수록 지도는 축소되는데
    * 이 설정한 레벨까지만 축소할 수 있게 된다. */
-  maxLevel?: Level;
+  maxLevel?: number | string;
   /**
    * center를 이동할 때 부드럽게 이동한다.
    * 지도 화면보다 클 경우 애니메이션 없이 이동한다.
