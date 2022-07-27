@@ -2,15 +2,16 @@
 import { shallowRef } from 'vue';
 import MapTest from './MapTest.vue';
 import MarkerTest from './MarkerTest.vue';
+import CustomOverlayTest from './CustomOverlayTest.vue';
 
-const component = shallowRef();
+const component = shallowRef(CustomOverlayTest);
 </script>
 <template>
   <label>
     <input
       v-model="component"
       :value="MapTest"
-      name="pizza"
+      name="comp"
       type="radio"
     >
     Map Test
@@ -19,10 +20,19 @@ const component = shallowRef();
     <input
       v-model="component"
       :value="MarkerTest"
-      name="pizza"
+      name="comp"
       type="radio"
     >
     Marker Test
+  </label>
+  <label>
+    <input
+      v-model="component"
+      :value="CustomOverlayTest"
+      name="comp"
+      type="radio"
+    >
+    CustomOverlay Test
   </label>
   <component :is="component" />
 </template>
