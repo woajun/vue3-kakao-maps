@@ -52,21 +52,22 @@ const usePanTo = ref(true);
       boundsChange
     </button>
     <br>
-    이동:
-    <button @click="center = myongDongStation">
-      명동역
-    </button>
-    <button @click="center = seoulStation">
-      서울역
-    </button>
-    <button @click="center = gyongBockStation">
-      경북궁역
-    </button>
+    <label>
+      이동:
+      <button @click="center = myongDongStation">
+        명동역
+      </button>
+      <button @click="center = seoulStation">
+        서울역
+      </button>
+      <button @click="center = gyongBockStation">
+        경북궁역
+      </button>
+    </label>
     <br>
-    <label for="level">
+    <label>
       Level:
       <input
-        id="level"
         v-model="level"
         min="1"
         max="14"
@@ -74,10 +75,9 @@ const usePanTo = ref(true);
       >
     </label>
     <br>
-    <label for="minLevel">
+    <label>
       minLevel:
       <input
-        id="minLevel"
         v-model="minLevel"
         min="1"
         max="14"
@@ -85,10 +85,9 @@ const usePanTo = ref(true);
       >
     </label>
     <br>
-    <label for="maxLevel">
+    <label>
       maxLevel:
       <input
-        id="maxLevel"
         v-model="maxLevel"
         min="1"
         max="14"
@@ -96,10 +95,9 @@ const usePanTo = ref(true);
       >
     </label>
     <br>
-    <label for="usePanTo">
+    <label>
       usePanTo:
       <input
-        id="usePanTo"
         v-model="usePanTo"
         type="checkbox"
       >

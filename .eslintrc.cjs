@@ -11,4 +11,8 @@ module.exports = {
     '@vue/eslint-config-typescript/recommended',
     'plugin:import/typescript',
   ],
+  rules: {
+    'vuejs-accessibility/label-has-for': 'off',
+    'vuejs-accessibility/form-control-has-label': 'off',
+  },
 };
