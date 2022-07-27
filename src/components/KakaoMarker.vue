@@ -50,7 +50,24 @@ watch(() => props.position, (newPosition) => {
     marker.value?.setMap(kakaoMap.value);
   }
 });
-
+watch(() => props.image, (newImage) => {
+  marker.value?.setImage(newImage);
+});
+watch(() => props.title, (newTitle) => {
+  marker.value?.setTitle(newTitle);
+});
+watch(() => props.draggable, (newDraggable) => {
+  marker.value?.setDraggable(newDraggable);
+});
+watch(() => props.clickable, (newClickable) => {
+  marker.value?.setClickable(newClickable);
+});
+watch(() => props.zIndex, (newZIndex) => {
+  marker.value?.setZIndex(newZIndex);
+});
+watch(() => props.opacity, (newOpacity) => {
+  marker.value?.setOpacity(newOpacity);
+});
 watch(
   () => kakaoMap.value,
   (newMap) => {
