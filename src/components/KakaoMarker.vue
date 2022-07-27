@@ -16,7 +16,10 @@ interface Props {
   title?: string;
   /** 드래그 가능한 마커, 로드뷰에 올릴 경우에는 유효하지 않다 */
   draggable?: boolean;
-  /** 클릭 가능한 마커 */
+  /**
+   * 클릭 가능 여부를 지정한다.
+   * true 로 지정하게 되면 마커를 클릭 했을 때, 지도의 클릭 이벤트가 발생하지 않도록 막아준다.
+  */
   clickable?: boolean;
   /** 마커 엘리먼트의 z-index 속성 값 */
   zIndex?: number;
@@ -34,7 +37,7 @@ const props = withDefaults(defineProps<Props>(), {
   draggable: false,
   clickable: true,
   zIndex: 1,
-  opacity: 0,
+  opacity: 1,
 //   altitude: undefined,
 //   range: undefined,
 });
@@ -89,8 +92,8 @@ watch(
       draggable: props.draggable,
       clickable: props.clickable,
       zIndex: props.zIndex,
-      opacity: props.opacity,
     });
+    newMarker.setOpacity(props.opacity);
     marker.value = newMarker;
   },
 );
