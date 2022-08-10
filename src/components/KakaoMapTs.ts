@@ -1,5 +1,5 @@
 import {
-  defineComponent, h, provide, ref, watch, type StyleValue,
+  defineComponent, h, onMounted, provide, ref, watch, type StyleValue,
 } from 'vue';
 import helper from './helper';
 
@@ -158,9 +158,11 @@ const KakaoMap = defineComponent<KakaoMapProps>((props, ctx) => {
     map.value?.setZoomable(newKeyboardShortcuts ?? false);
   });
 
-  k.load(createMap);
+  onMounted(() => {
+    k.load(createMap);
+  });
 
-  return () => h('div', { id: 'map', ref: container }, 'apple');
+  return () => h('div', { id: 'map', ref: container });
 });
 
 KakaoMap.props = [
