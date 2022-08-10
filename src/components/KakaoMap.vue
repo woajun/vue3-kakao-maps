@@ -93,7 +93,7 @@ provide('kakaoMap', map);
 function createMap() {
   if (!container.value) return;
   const options: kakao.maps.MapOptions = {
-    center: new window.kakao.maps.LatLng(
+    center: new kakao.maps.LatLng(
       props.center.lat,
       props.center.lng,
     ),
@@ -103,14 +103,14 @@ function createMap() {
     disableDoubleClickZoom: !props.doubleClickZoom,
     keyboardShortcuts: props.keyboardShortcuts,
   };
-  const aMap = new window.kakao.maps.Map(container.value, options);
+  const aMap = new kakao.maps.Map(container.value, options);
 
   aMap.setMinLevel(Number(props.minLevel));
   aMap.setMaxLevel(Number(props.maxLevel));
 
   if (props.controlPosition !== undefined) {
     aMap.addControl(
-      new window.kakao.maps.ZoomControl(),
+      new kakao.maps.ZoomControl(),
       kakao.maps.ControlPosition[props.controlPosition],
     );
   }
@@ -130,9 +130,9 @@ watch(
   () => props.center,
   ({ lat, lng }) => {
     if (props.usePanTo) {
-      map.value?.panTo(new window.kakao.maps.LatLng(lat, lng));
+      map.value?.panTo(new kakao.maps.LatLng(lat, lng));
     } else {
-      map.value?.setCenter(new window.kakao.maps.LatLng(lat, lng));
+      map.value?.setCenter(new kakao.maps.LatLng(lat, lng));
     }
   },
 );
@@ -143,7 +143,7 @@ watch(
     if ('sw' in newBounds) {
       const sw = helper.latlngToKakao(newBounds.sw);
       const ne = helper.latlngToKakao(newBounds.ne);
-      const bounds = new window.kakao.maps.LatLngBounds(sw, ne);
+      const bounds = new kakao.maps.LatLngBounds(sw, ne);
       map.value?.setBounds(bounds);
     }
   },
